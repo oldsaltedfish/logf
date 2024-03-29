@@ -6,13 +6,6 @@ import (
 	"testing"
 )
 
-//var sugar *zap.SugaredLogger
-//
-//func TestMain(m *testing.M) {
-//	l, _ := zap.NewProduction()
-//	sugar = l.Sugar()
-//}
-
 func TestLogger_Debug(t *testing.T) {
 	type fields struct {
 		sugar *zap.SugaredLogger
