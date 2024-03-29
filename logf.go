@@ -20,19 +20,19 @@ type Logger interface {
 	Errorf(format string, a ...interface{})
 }
 
-func NewLoggerWithZap() {
+func NewLoggerWithZap() Logger {
 	l, err := zap.NewProduction()
 	if err != nil {
 		panic(err)
 	}
-	logger.NewZapLogger(l.Sugar())
+	return logger.NewZapLogger(l.Sugar())
 }
 
-func NewLoggerWithLogrus() {
-	logger.NewLogrusLogger(logrus.New())
+func NewLoggerWithLogrus() Logger {
+	return logger.NewLogrusLogger(logrus.New())
 }
 
-func NewLoggerWithZeroLog() {
+func NewLoggerWithZeroLog() Logger {
 	l := zerolog.New(os.Stderr).With().Timestamp().Logger()
-	logger.NewZeroLogger(&l)
+	return logger.NewZeroLogger(&l)
 }
