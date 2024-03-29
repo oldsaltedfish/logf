@@ -1,6 +1,6 @@
 package logf
 
-type Logf interface {
+type Logger interface {
 	Debug(interface{})
 	Info(interface{})
 	Warn(interface{})

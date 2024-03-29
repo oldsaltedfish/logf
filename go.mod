@@ -1,4 +1,4 @@
-module logf
+module github.com/oldsaltedfish/logf
 
 go 1.21
 
