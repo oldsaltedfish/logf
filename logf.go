@@ -21,7 +21,7 @@ type Logger interface {
 }
 
 func NewLoggerWithZap() Logger {
-	l, err := zap.NewProduction()
+	l, err := zap.NewProductionConfig().Build(zap.AddCallerSkip(1))
 	if err != nil {
 		panic(err)
 	}

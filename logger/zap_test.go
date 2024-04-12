@@ -13,7 +13,7 @@ func TestLogger_Debug(t *testing.T) {
 	type args struct {
 		i interface{}
 	}
-	l, _ := zap.NewDevelopment()
+	l, _ := zap.NewDevelopmentConfig().Build(zap.AddCallerSkip(1))
 	sugar := l.Sugar()
 	tests := []struct {
 		name   string
